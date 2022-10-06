@@ -43,6 +43,21 @@ docker exec [OPTIONS] <container_id ou container_name> command
 # Renomme un container
 docker rename <Container> <new_name>
 
+# Creer un volume
+docker volume create <volume_name>
+
+# Afficher la liste des volumes
+docker volume ls
+
+# Lance un conteneur avec un volume pointant vers le dossier /data qui sauvegarde tout ce qui se trouve dans ce dossier
+docker run --name=my_volume_test_container -it -v vtest:/data img_test
+
+# Creer une image à partir d'un conteneur existant : Convention de nommage <nom_Utilisateur>/<nom_image>
+docker commit <container>
+
+# Push l'image dans le hub-docker public
+docker push <image>
+
 ## Quelques options
 
 #Allouer un terminal tty (terminal virtuel)
